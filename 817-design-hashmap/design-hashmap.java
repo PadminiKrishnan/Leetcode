@@ -1,38 +1,28 @@
 class MyHashMap {
 
-private Map<Integer,Integer> map;
+private int a[];
 
     public MyHashMap() {
-
-        this.map = new HashMap<>();
-        
-    }
+        a = new int[1000001];
+        Arrays.fill(a,-1);
+     }
     
     public void put(int key, int value) {
-
-        map.put(key,value);
-
-        if(map.containsKey(key)){
-            map.put(key,value);
-        }
+        a[key] = value;
+    
 }
     
     public int get(int key) {
 
-        if(map.containsKey(key)){
-        return map.get(key);
-        }
-
-        return -1;
+        return a[key];
     }
     
     public void remove(int key) {
 
-        if(map.containsKey(key)){
-            map.remove(key);
+       a[key] = -1;
     }
 }
-}
+
 /**
  * Your MyHashMap object will be instantiated and called as such:
  * MyHashMap obj = new MyHashMap();
